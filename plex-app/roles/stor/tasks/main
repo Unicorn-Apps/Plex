@@ -1,0 +1,11 @@
+---
+
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: "/stor/app/plex/{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - library
+    - tvseries
+    - movies
